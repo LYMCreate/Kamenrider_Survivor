@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: City
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 8e9f23fcd50cd504bb1df3fcafa0a79a, type: 3}
+    - {fileID: 2800000, guid: 3950519481b67974fbfa9d8a2a07054c, type: 3}
+    - {fileID: 2800000, guid: 41711a9ff6efba04ba26026b9bca4bec, type: 3}
+    - {fileID: 2800000, guid: b3372cb7ee839d84eb1580aed9313c69, type: 3}
+    - {fileID: 2800000, guid: 4af4158b2f931724e84ace6a67625367, type: 3}
+    - {fileID: 2800000, guid: 2357c1173c0a5f841bd9038a5541d8e5, type: 3}
+    - {fileID: 2800000, guid: b674e31721011034495d59dc5fff26c8, type: 3}
+    - {fileID: 2800000, guid: 6c5623c23445bb645af0c0c8afa91cb9, type: 3}
+    - {fileID: 2800000, guid: ee9cd3bdf289e3446ae94ab6f4289db8, type: 3}
+    - {fileID: 2800000, guid: be5d46cf23785014eb3c144babff787b, type: 3}
+    - {fileID: 2800000, guid: ba18d7c33d2ffb34f9976377ec9acafb, type: 3}
+    - {fileID: 2800000, guid: 9a0a479c2e88058468604ca95fd52374, type: 3}
+    - {fileID: 2800000, guid: 51cfb98352dd346448ef63aef4596de3, type: 3}
+    - {fileID: 2800000, guid: 8e4d636e98300534ba0e40f81e16a44c, type: 3}
+    - {fileID: 2800000, guid: e27170bf499e6494eb949a17ec76847c, type: 3}
+    - {fileID: 2800000, guid: c3a89561d7cb7cb44899db60ff1fb9eb, type: 3}
+    - {fileID: 2800000, guid: 56e36d2a64b9fa347a5d4439bf4fe36e, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: c3a89561d7cb7cb44899db60ff1fb9eb, type: 3}
+  - {fileID: 21300000, guid: 6c5623c23445bb645af0c0c8afa91cb9, type: 3}
+  - {fileID: 21300000, guid: 51cfb98352dd346448ef63aef4596de3, type: 3}
+  - {fileID: 21300000, guid: ba18d7c33d2ffb34f9976377ec9acafb, type: 3}
+  - {fileID: 21300000, guid: 3950519481b67974fbfa9d8a2a07054c, type: 3}
+  - {fileID: 21300000, guid: 2357c1173c0a5f841bd9038a5541d8e5, type: 3}
+  - {fileID: 21300000, guid: b674e31721011034495d59dc5fff26c8, type: 3}
+  - {fileID: 21300000, guid: b3372cb7ee839d84eb1580aed9313c69, type: 3}
+  - {fileID: 21300000, guid: 56e36d2a64b9fa347a5d4439bf4fe36e, type: 3}
+  - {fileID: 21300000, guid: 4af4158b2f931724e84ace6a67625367, type: 3}
+  - {fileID: 21300000, guid: 9a0a479c2e88058468604ca95fd52374, type: 3}
+  - {fileID: 21300000, guid: 8e9f23fcd50cd504bb1df3fcafa0a79a, type: 3}
+  - {fileID: 21300000, guid: ee9cd3bdf289e3446ae94ab6f4289db8, type: 3}
+  - {fileID: 21300000, guid: 8e4d636e98300534ba0e40f81e16a44c, type: 3}
+  - {fileID: 21300000, guid: 41711a9ff6efba04ba26026b9bca4bec, type: 3}
+  - {fileID: 21300000, guid: e27170bf499e6494eb949a17ec76847c, type: 3}
+  - {fileID: 21300000, guid: be5d46cf23785014eb3c144babff787b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - TrafficLight
+  - Building4
+  - CrossRoad
+  - ClosswalkLightB
+  - Block-tile-shadow
+  - Building2
+  - Building3
+  - Block-tiles
+  - Tree-0
+  - Building1
+  - ClosswalkLightF
+  - AirHole
+  - CityRoad-Tiles
+  - PostBox
+  - Block-tiles-dark
+  - StreetLight
+  - CityRoad
+  m_Tag: City
+  m_IsVariant: 0
