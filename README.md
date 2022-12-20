@@ -7,8 +7,8 @@ Vampire Survivors를 모티브로 제작된 2D Unity 게임<br>
 메뉴키 - ESC<br>
 <br>
 <구현된 목록><br>
-레벨 업 마다 랜덤으로 얻을 수 있는 10가지의 기술 구현<br>
-시간, 레벨에 따라 강해지는 적군 구현<br>
-상점으로 스탯 강화를 할 수 있는 기능 구현<br>
+레벨 업 마다 랜덤으로 얻을 수 있는 10가지의 기술<br>
+시간, 레벨에 따라 강해지는 적군<br>
+상점으로 스탯 강화를 할 수 있는 기능<br>
 <br>
 실행파일 - https://drive.google.com/file/d/1Q8ITYTXcYZTZHelNPwNMNHabsQIs30CL/view?usp=share_link
