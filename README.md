@@ -1,4 +1,4 @@
-# Kamenrider_Survivor
+# Kamenrider_Survivors
 Unity 2D Game
 
 Vampire Survivors를 모티브로 제작된 2D Unity 게임<br>
