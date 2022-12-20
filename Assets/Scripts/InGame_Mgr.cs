@@ -155,6 +155,7 @@ public class InGame_Mgr : MonoBehaviour
             {
                 LevelUp();
                 CharCtrl.Inst.Item_Refresh -= 1;
+                Refresh_Txt.text = CharCtrl.Inst.Item_Refresh + "회 남음";
             }
         });
         Skill_SkipBtn.onClick.AddListener(() => SkipBtnFunc());
