@@ -213,7 +213,18 @@ public class MonsterCtrl : MonoBehaviour
 
         if (hp <= 0)
         {
-            GameObject ExpItem = Instantiate(Resources.Load<GameObject>("Prefab/Item/ExpItem"));
+            GameObject ExpItem = null;
+
+            int GoldorExp = Random.Range(0, 5);
+            if (GoldorExp == 0)
+            {
+                ExpItem = Instantiate(Resources.Load<GameObject>("Prefab/Item/GoldItem"));
+            }
+            else
+            {
+                ExpItem = Instantiate(Resources.Load<GameObject>("Prefab/Item/ExpItem"));
+            }
+
             ExpItem.transform.position = this.transform.position;
             hp = 0;
             MonsterDie();

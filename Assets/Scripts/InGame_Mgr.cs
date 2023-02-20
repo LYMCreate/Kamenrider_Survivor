@@ -27,6 +27,7 @@ public class InGame_Mgr : MonoBehaviour
 
     int m_MonCurNum = 0;
     int maxMonster = 150;
+    float spontime = 0;
     public GameObject[] monsterPrefabs;
     Transform MonsterSpawnGroup;
 
@@ -73,6 +74,9 @@ public class InGame_Mgr : MonoBehaviour
     public Button Skill_SkipBtn;
     public Text Refresh_Txt;
     public Text Skip_Txt;
+    public GameObject SkillInfo;
+    public Text SkillInfo_Title;
+    public Text SkillInfo_Info;
 
     public GameObject Menu_Panel;
     public Button ResumeBtn;
@@ -469,6 +473,7 @@ public class InGame_Mgr : MonoBehaviour
         s_GameState = GameState.GamePlay;
         LevelUpPanel.SetActive(false);
         Status_Img.SetActive(false);
+        SkillInfo.SetActive(false);
     }
 
     // --- DamageTxt
@@ -537,11 +542,33 @@ public class InGame_Mgr : MonoBehaviour
             //현재 생성된 몬스터 개수 산출
             int monsterCount = (int)GameObject.FindGameObjectsWithTag("MONSTER").Length;
 
-            yield return new WaitForSeconds(0.5f);
+            if (2.0f >= (InGame_Mgr.Inst.Game_Timer / 60))
+            {
+                spontime = 1.5f;
+            }
+            else if (4.0f >= (InGame_Mgr.Inst.Game_Timer / 60))
+            {
+                spontime = 1.2f;
+            }
+            else if (6.0f >= (InGame_Mgr.Inst.Game_Timer / 60))
+            {
+                spontime = 0.9f;
+            }
+            else if (8.0f >= (InGame_Mgr.Inst.Game_Timer / 60))
+            {
+                spontime = 0.6f;
+            }
+            else if (10.0f >= (InGame_Mgr.Inst.Game_Timer / 60))
+            {
+                spontime = 0.2f;
+            }
+
+            yield return new WaitForSeconds(spontime);
 
             //몬스터의 최대 생성 개수보다 작을 때만 몬스터 생성
             if (monsterCount < maxMonster)
             {
+                print("spwan");
                 //불규칙적인 위치 산출
                 int idx = Random.Range(1, points.Length);
 

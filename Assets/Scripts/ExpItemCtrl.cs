@@ -55,11 +55,12 @@ public class ExpItemCtrl : MonoBehaviour
         }
     }
 
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Player")
         {
-            InGame_Mgr.Inst.ExpUp(10 + (1 * CharCtrl.Inst.Growth));
+            InGame_Mgr.Inst.ExpUp(5 + (1 * CharCtrl.Inst.Growth));
             Destroy(this.gameObject);
         }
     }

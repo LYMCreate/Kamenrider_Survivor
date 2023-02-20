@@ -59,8 +59,8 @@ public class GoldItemCtrl : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            InGame_Mgr.Inst.Cur_Gold += 10 + (5 * (int)CharCtrl.Inst.Greed);
-            GlobalValue.g_UserGold += 10 + (5 * (int)CharCtrl.Inst.Greed);
+            InGame_Mgr.Inst.Cur_Gold += 5 + (3 * (int)CharCtrl.Inst.Greed);
+            GlobalValue.g_UserGold += 5 + (3 * (int)CharCtrl.Inst.Greed);
             PlayerPrefs.SetInt("UserGold", GlobalValue.g_UserGold);
             Destroy(this.gameObject);
         }

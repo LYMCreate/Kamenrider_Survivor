@@ -64,6 +64,7 @@ public class CharInfo  //각 Item 정보
 public class SkillInfo  //각 스킬 정보
 {
     public string Name = "";                    // 스킬 이름
+    public string Info = "";                    // 스킬 설명
     public SkillName CrType = SkillName.Kuuga;  // 캐릭터 타입
     public Sprite IconImg = null;               // 캐릭터 이미지
     public int m_Level = 0;
@@ -75,60 +76,70 @@ public class SkillInfo  //각 스킬 정보
         if (a_CrType == SkillName.Kuuga)
         {
             Name = "쿠우가 (패시브)";
+            Info = "최대 체력, 회복, 방어력, 피해량이 증가한다.";
             IconImg = Resources.Load("Icon/Kuuga", typeof(Sprite)) as Sprite;
             m_Level = 0;
         }
         else if (a_CrType == SkillName.Agito)
         {
             Name = "아기토 (액티브)";
+            Info = "가장 가까운 적에게 강력한 근접 공격을 한다.";
             IconImg = Resources.Load("Icon/Agito", typeof(Sprite)) as Sprite;
             m_Level = 0;
         }
         else if (a_CrType == SkillName.Ryuki)
         {
             Name = "류우키 (액티브)";
+            Info = "드래그레더를 소환하여 화살표 방향으로 발사한다.";
             IconImg = Resources.Load("Icon/Ryuki", typeof(Sprite)) as Sprite;
             m_Level = 0;
         }
         else if (a_CrType == SkillName.Faiz)
         {
             Name = "파이즈 (액티브)";
+            Info = "포인터로 가장 가까운 적을 속박한다. 그 후 포인터와 접촉시 강력한 대미지를 입힌다.";
             IconImg = Resources.Load("Icon/Faiz", typeof(Sprite)) as Sprite;
             m_Level = 0;
         }
         else if (a_CrType == SkillName.Blade)
         {
             Name = "블레이드 (액티브)";
+            Info = "캐릭터를 중심으로 회전하는 카드를 소환한다.";
             IconImg = Resources.Load("Icon/Blade", typeof(Sprite)) as Sprite;
             m_Level = 0;
         }
         else if (a_CrType == SkillName.Hibiki)
         {
             Name = "히비키 (액티브)";
+            Info = "포물선으로 떨어지는 음격봉을 캐릭터의 위쪽으로 던진다.";
             IconImg = Resources.Load("Icon/Hibiki", typeof(Sprite)) as Sprite;
             m_Level = 0;
         }
         else if (a_CrType == SkillName.Kabuto)
         {
             Name = "카부토 (패시브)";
+            Info = "이동속도, 공격속도가 증가한다.";
             IconImg = Resources.Load("Icon/Kabuto", typeof(Sprite)) as Sprite;
             m_Level = 0;
         }
         else if (a_CrType == SkillName.DenO)
         {
             Name = "덴오 (액티브)";
+            Info = "왼쪽에서 캐릭터를 꿰뚫고 지나가는 덴라이너를 소환한다.";
             IconImg = Resources.Load("Icon/Den-O", typeof(Sprite)) as Sprite;
             m_Level = 0;
         }
         else if (a_CrType == SkillName.Kiva)
         {
             Name = "키바 (액티브)";
+            Info = "자신에게서 가장 가까운적을 추적하는 흡혈박쥐를 소환한다.";
             IconImg = Resources.Load("Icon/Kiva", typeof(Sprite)) as Sprite;
             m_Level = 0;
         }
         else if (a_CrType == SkillName.Decade)
         {
             Name = "디케이드 (기본무기)";
+            Info = "화살표 방향으로 칼을 휘두른다.";
             IconImg = Resources.Load("Icon/Decade", typeof(Sprite)) as Sprite;
             m_Level = 1;
         }
