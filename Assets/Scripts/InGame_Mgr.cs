@@ -123,17 +123,6 @@ public class InGame_Mgr : MonoBehaviour
 
         MonsterSpawnGroup = GameObject.Find("MonsterSpawnGroup").GetComponent<Transform>();
         SpawnPointGroup = GameObject.Find("PointGroup").GetComponent<Transform>();
-        //for (int i = -220; i <= 220; i += 20)
-        //{
-        //    for (int j = -220; j <= 220; j += 20)
-        //    {
-        //        PointNumber++;
-        //        GameObject SpawnPoint = (GameObject)Instantiate(SpawnPointPrefab);
-        //        SpawnPoint.name = "Point_" + PointNumber.ToString();
-        //        SpawnPoint.transform.position = new Vector3(i, j, 1);
-        //        SpawnPoint.transform.parent = SpawnPointGroup;
-        //    }
-        //}
 
         points = GameObject.Find("PointGroup").GetComponentsInChildren<Transform>();
 
@@ -217,6 +206,7 @@ public class InGame_Mgr : MonoBehaviour
         }
     }
 
+    // 페이드인아웃
     void FadeInOut()
     {
         if (s_GameState == GameState.GamePause && LobbyBtnOn == false)
@@ -250,6 +240,7 @@ public class InGame_Mgr : MonoBehaviour
         }
     }
 
+    // 메뉴창
     void MenuOpen()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -271,6 +262,7 @@ public class InGame_Mgr : MonoBehaviour
         }
     }
 
+    // 스킵버튼
     void SkipBtnFunc()
     {
         if (CharCtrl.Inst.Item_Skip >= 1)
@@ -283,12 +275,14 @@ public class InGame_Mgr : MonoBehaviour
         }
     }
 
+    // 스테이터스창
     void StatusOpen()
     {
         Status_Img.SetActive(true);
         CharCtrl.Inst.StatusRefresh();
     }
 
+    // 게임 내 타이머
     void Timer_Refresh()
     {
         if (s_GameState != GameState.GamePlay)
@@ -299,6 +293,7 @@ public class InGame_Mgr : MonoBehaviour
         Game_TimerTxt.text = ((int)Game_Timer / 60).ToString() + " : " + ((int)Game_Timer % 60).ToString("D2");
     }
 
+    // 경험치 획득
     public void ExpUp(float Exp)
     {
         if (s_GameState == GameState.GameEnd)
@@ -318,8 +313,10 @@ public class InGame_Mgr : MonoBehaviour
         Exp_bar.fillAmount = (float)Cur_Exp / (float)Next_Exp;
     }
 
+    // 레벨업
     void LevelUp()
     {
+        // 퍼즈 및 레벨업창 오픈
         if (LevelUpPanel.activeSelf == false)
         {
             Time.timeScale = 0.0f;
@@ -334,6 +331,7 @@ public class InGame_Mgr : MonoBehaviour
 
         List<int> RandomNumList = new List<int>();
 
+        // 랜덤으로 스킬을 3개를 얻어옴
         if (CrSkNum < MaxInven)
         {
             int currentNumber = Random.Range(0, (int)SkillName.CrCount);
@@ -423,6 +421,7 @@ public class InGame_Mgr : MonoBehaviour
         }
     }
 
+    // 스킬 획득
     void SkillGet(SkillName a_CrType)
     {
         for (int i = 0; i < GlobalValue.m_SkDataList.Count; i++)
@@ -476,7 +475,7 @@ public class InGame_Mgr : MonoBehaviour
         SkillInfo.SetActive(false);
     }
 
-    // --- DamageTxt
+    // 데미지 표현
     public void DamageTxt(float a_Value, Transform a_OwnerTr, bool IsChar = false)
     {
         GameObject a_DamClone = (GameObject)Instantiate(Damage_Txt_Obj);
@@ -494,40 +493,6 @@ public class InGame_Mgr : MonoBehaviour
         }
     }
 
-    // --- SpawnPoint 온오프
-    //void SpawnPointActive()
-    //{
-    //    if (s_GameState != GameState.GamePlay)
-    //        return;
-
-    //    for (int i = 1; i < PointNumber; i++)
-    //    {
-    //        if (RefCamCtrl.m_CamWMin.x - 5.0f < points[i].transform.position.x &&
-    //            RefCamCtrl.m_CamWMin.y - 5.0f < points[i].transform.position.y)
-    //        {
-    //            if (points[i].transform.position.x < RefCamCtrl.m_CamWMax.x + 5.0f &&
-    //                points[i].transform.position.y < RefCamCtrl.m_CamWMax.y + 5.0f &&
-    //                points[i].gameObject.activeSelf == true)
-    //            {
-    //                points[i].gameObject.SetActive(false);
-    //            }
-    //            else if ((points[i].transform.position.x > RefCamCtrl.m_CamWMax.x + 5.0f ||
-    //                    points[i].transform.position.y > RefCamCtrl.m_CamWMax.y + 5.0f) &&
-    //                    points[i].gameObject.activeSelf == false)
-    //            {
-    //                points[i].gameObject.SetActive(true);
-    //            }
-    //        }
-    //        else if ((RefCamCtrl.m_CamWMin.x - 5.0f > points[i].transform.position.x ||
-    //                RefCamCtrl.m_CamWMin.y - 5.0f > points[i].transform.position.y) &&
-    //                points[i].gameObject.activeSelf == false)
-    //        {
-    //            points[i].gameObject.SetActive(true);
-    //        }
-    //    }
-    //}
-    // --- SpawnPoint 온오프
-
     //몬스터 생성 코루틴 함수
 
     IEnumerator CreateMonster()
@@ -535,7 +500,6 @@ public class InGame_Mgr : MonoBehaviour
         //게임 종료 시까지 무한 루프
         while (!isGameOver)
         {
-            //플레이어가 사망했을 때 코루틴을 종료해 다음 루틴을 진행하지 않음
             if (InGame_Mgr.s_GameState == GameState.GameEnd)
                 yield break;
 
@@ -600,15 +564,16 @@ public class InGame_Mgr : MonoBehaviour
                 yield return null;
             }
 
-        } //while (!isGameOver)
-    } //IEnumerator CreateMonster()
+        }
+    }
 
+    // 게임오버시 연출
     public void GameOver()
     {
         if (GameOver_Pannel.activeSelf == false)
             GameOver_Pannel.SetActive(true);
 
-        if (GameOverImage_time < 0.4f) //특정 위치에서 원점으로 이동
+        if (GameOverImage_time < 0.4f) // 특정 위치에서 원점으로 이동
         {
             GameOverImage.transform.localPosition -= new Vector3(0, 400, 0) * Time.deltaTime;
         }
@@ -616,15 +581,15 @@ public class InGame_Mgr : MonoBehaviour
         {
             GameOverImage.transform.localPosition += new Vector3(0, 200, 0) * Time.deltaTime;
         }
-        else if (GameOverImage_time < 0.6f) //다시 제자리로
+        else if (GameOverImage_time < 0.6f) // 다시 제자리로
         {
             GameOverImage.transform.localPosition -= new Vector3(0, 200, 0) * Time.deltaTime;
         }
-        else if (GameOverImage_time < 0.7f) //튕기고
+        else if (GameOverImage_time < 0.7f) // 튕기고
         {
             GameOverImage.transform.localPosition += new Vector3(0, 100, 0) * Time.deltaTime;
         }
-        else if (GameOverImage_time < 0.8f) //다시 제자리
+        else if (GameOverImage_time < 0.8f) // 다시 제자리
         {
             GameOverImage.transform.localPosition -= new Vector3(0, 50, 0) * Time.deltaTime;
         }
@@ -644,6 +609,7 @@ public class InGame_Mgr : MonoBehaviour
         GameOverImage_time += Time.deltaTime / 2;
     }
 
+    // 결과창 연출
     void Result_Play()
     {
         if (GameOver_Pannel.activeSelf == true)
@@ -704,8 +670,10 @@ public class InGame_Mgr : MonoBehaviour
         }
     }
 
+    // 게임오버 로비버튼 클릭
     void LobbyBtnFuc()
     {
+        // 게임오버 연출 중 버튼 클릭시
         if (temp_Timer != Game_Timer || temp_Eneny != Kill_Enemy)
         {
             temp_Timer = Game_Timer;
